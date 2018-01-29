@@ -1,32 +1,11 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-// grab the middleware/headers form headers.js
-app.use(require('./middleware/headers'))
-// test the api and see if we can send a get request
-app.use('/api/test', function(req,res){
-    res.send('Hello World')
-});
+var sequelize = require('./db.js');
+var User= sequelize.import('./models/user')
 
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('workoutlog', 'postgres', 'disgr@cefuljellybean', {
-    host: 'localhost',
-    dialect: 'postgres'
-});
-
-sequelize.authenticate().then(
-    function(){
-        console.log('connected to workoutlog postgres db')
-    },
-    function(err){
-        console.log(err)
-    }
-)
 // build user model
-    var User = sequelize.define('user', {
-        username: Sequelize.STRING,
-        passwordhash: Sequelize.STRING,
-    });
+   
 User.sync();
 //  User.sync({force:true});
 app.use(bodyParser.json());
@@ -56,6 +35,13 @@ app.post('/api/user', function(req, res) {
         }
     )
 })
+// grab the middleware/headers form headers.js
+app.use(require('./middleware/headers'))
+// test the api and see if we can send a get request
+app.use('/api/test', function(req,res){
+    res.send('Hello World')
+});
+
 // open server on port 3000
 app.listen(3000, function(){
     console.log("app is open on 3000!")
