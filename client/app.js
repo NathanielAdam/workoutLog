@@ -14,4 +14,16 @@ $(document).ready(function(){
     .fail(function(){
         console.log("oh no!")
     })
+
+
+
+
+
+
+
+
+
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
 })
