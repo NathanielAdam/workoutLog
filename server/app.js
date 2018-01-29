@@ -10,7 +10,7 @@ User.sync();
 //  User.sync({force:true});
 app.use(bodyParser.json());
 
-
+app.use('/api/login', require('./routes/session'))
 // grab the middleware/headers form headers.js
 app.use(require('./middleware/headers'))
 // test the api and see if we can send a get request
