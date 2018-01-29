@@ -9,10 +9,10 @@
   "author": "NathanielAdam",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "pg": "^4.5.6",
+    "body-parser": "^1.18.2",
+    "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.23.3"
+    "sequelize": "^3.31.1"
   },
   "devDependencies": {
     "express": "^4.16.2"
