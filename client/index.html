@@ -48,7 +48,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-danger" style="display:none"></div>
+                    <div class="alert alert-danger" style="display:none" role="alert" id="li_error"></div>
                     
                     <input type="text" id="li_username" placeholder="Username"><br>
                     
@@ -62,7 +62,7 @@
         </div>
     </div>
 <!-- signup -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -72,11 +72,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-danger" style="display:none"></div>
+                        <div class="alert alert-danger" style="display:none" role="alert" id="su_error"></div>
                     
-                    <input type="text" id="li_username" placeholder="Username"><br>
+                    <input type="text" id="su_username" placeholder="Username"><br>
                     
-                    <input type="password" id="li_password" placeholder="Password">
+                    <input type="password" id="su_password" placeholder="Password">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -85,6 +85,7 @@
             </div>
         </div>
     </div>
+    <script src="./user/auth.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
