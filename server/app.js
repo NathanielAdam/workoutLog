@@ -8,7 +8,7 @@ var User= sequelize.import(__dirname + '\\models\\user')
 // build user model
    
 // User.sync();
-//  User.sync({force:true});
+// sequelize.sync({force:true});
 sequelize.sync();
 app.use(bodyParser.json());
 
