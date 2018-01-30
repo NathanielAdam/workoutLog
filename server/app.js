@@ -17,6 +17,7 @@ app.use(require('./middleware/validate-session'))
 app.use('/api/user', require('./routes/user'));
 app.use('/api/login', require('./routes/session'))
 app.use('/api/definition', require('./routes/definitions'))
+app.use('/api/log', require('./routes/log'))
 // grab the middleware/headers form headers.js
 // app.use('/api/definition', require('./routes/log'))
 // test the api and see if we can send a get request
