@@ -49,7 +49,7 @@ router.get('/', function(req, res){
         function findAllSucess(data) {
             //console.log(data)
             res.json(data);
-        }
+        },
         //error
         function findAllError(err) {
             res.send(500, err.message)

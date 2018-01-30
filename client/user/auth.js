@@ -29,7 +29,12 @@ $(function() {
        login: function() {
             var username = $("#li_username").val();
             var password = $("#li_password").val();
-            var user = {user:  {username: username, password: password }};
+            var user = {
+                user:{
+                    username: username, 
+                    password: password 
+                }
+            };
             //login post
             var login = $.ajax({
                 type: "POST", 
@@ -50,7 +55,7 @@ $(function() {
             })
             .fail(function() {
                 $("#li_error").text("There was an issue with your username or password").show();
-               });
+            });
        },
  
        loginout: function() {
