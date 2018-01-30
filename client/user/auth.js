@@ -25,17 +25,19 @@ $(function() {
                 $("#su_error").text("There was an issue with your username").show();
              });
        },
- 
+       //login method
        login: function() {
             var username = $("#li_username").val();
             var password = $("#li_password").val();
             var user = {user:  {username: username, password: password }};
+            //login post
             var login = $.ajax({
                 type: "POST", 
                 url: WorkoutLog.API_BASE + "login", 
                 data: JSON.stringify(user), 
                 contentType: "application/json"
             });
+            //login fail/done
             login.done(function(data) {
                 if (data.sessionToken) {
                 WorkoutLog.setAuthHeader(data.sessionToken);
@@ -56,6 +58,8 @@ $(function() {
              window.localStorage.removeItem("sessionToken");
              $("#loginout").text("Login");
           }
+          //TODO: on logout make sure these things are disabled
+          
        }
     });
  
