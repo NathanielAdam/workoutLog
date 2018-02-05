@@ -65,8 +65,13 @@ $(function(){
            if (target === "#history") {
                WorkoutLog.log.setHistory();
            }
+           if (target === "#groups") {
+               WorkoutLog.groups.group.getGroup()
+           }
        });
-
+       $('#group-form').on("submit", function(e){
+            e.preventDefault()
+       })
        var token = window.localStorage.getItem("sessionToken");
        if (token) {
           WorkoutLog.setAuthHeader(token); 

@@ -29,7 +29,7 @@
     <li><a href="#define" class="disabled" data-toggle="tab">Define</a></li>
     <li><a href="#log" class="disabled" data-toggle="tab">Log</a></li>
     <li><a href="#history" class="disabled" data-toggle="tab">View History</a></li>
-    <li><a href="#groups" class="disabled" data-toggle="tab">View History</a></li>
+    <li><a href="#groups" class="disabled" data-toggle="tab">groups</a></li>
 
   </ul>
 
@@ -48,16 +48,22 @@
         </div>
       </div>
     <!-- groups -->
-      <div class="tab-pane active" id="home">
+      <div class="tab-pane active" id="groups">
         <h2>Groups</h2>
-        <div id="groups">
-          <form action="">
+        <div id="group">
+          <form id="group-form" action="">
             <input type="text" placeholder="John Doe" id="group-member">
             <input type="text" placeholder="running" id="group-workout">
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit" id="group-submit">Submit</button>
           </form>
-          <ul class="list-group" id="history-list">
-          </ul>
+          <table class="list-group">
+            <thead>
+              <th>Name</th>
+              <th>Workout</th>
+            </thead>
+            <tbody id="group-table">
+            </tbody>
+          </table>
         </div>
       </div>
     <!-- DEFINE -->
@@ -147,6 +153,7 @@
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./app.js"></script>
     <script src="./user/auth.js"></script> 
+    <script src="./workouts/group.js"></script>
     <script src="./workouts/define.js"></script>
     <script src="./workouts/log.js"></script>
 

@@ -4,8 +4,8 @@ $(function(){
             group:[],
             create: function() {
                 var grp = {
-                    grpMem = $('#group-member'),
-                    grpWrk = $('#group-workout')
+                    grpMem: $('#group-member'),
+                    grpWrk: $('#group-workout')
                 }
                 var postData = {groups: grp}
                 var grpMake = $.ajax({
@@ -19,8 +19,14 @@ $(function(){
                     $("#group-member").val("");
                     $("#group-workout").val("");
                     $('a[href="#group"]').tab("show");
+
                 })
+            },
+            grabGroup: function(){
+                var grpMemGrab = WorkoutLog.group.groupMember
+                var grpWrkGrab = WorkoutLog.group.groupWorkout
             }
+        
         }
     })
 })
