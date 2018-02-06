@@ -3,7 +3,7 @@ var sequelize = require('../db');
 var Log = sequelize.import('../models/log.js');
 var User = sequelize.import('../models/user.js');
 var Definition = sequelize.import('../models/definitions.js');
-
+//problem here, find this 
 router.post('/', function(req, res) {
     //req has some body properties that have username and pwd
     var description = req.body.log.desc;

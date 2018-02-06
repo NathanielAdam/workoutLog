@@ -1,46 +1,48 @@
-var express = require('express');
-var router = express.Router();
+
+var router = require('express').Router();
+var sequelize = require('../db');
+var USER = sequelize.import('../models/user')
+var group = sequelize.import('../models/group')
+
 
 router.post('/', function(req, res){
-    var groupMember =req.body.group.groupMember
-    var groupWorkout =req.body.group.groupWorkout
+    var groupMember =req.body.groupMember
+    var groupWorkout =req.body.groupWorkout
     var owner = req.user.id
-    res.send('new member added')
+   
 
-    Group
-        .create({
+    group
+    .create({
             groupMember: groupMember,
             groupWorkout: groupWorkout,
             owner:owner
         }).then(
             function createGroupSucess(group) {
-                res.json({group:group})
+                res.json({
+                    group:group,
+                    message:"created"
+                })
             },
             function createGroupFail(err){
-                res.send(500, err.me)
+                res.send(501, err.message)
             }
         )
 })
-
-router.get('/', function(req, res){
-    //user variable
-    var userid = req.user.id
-
-    Definition
-    //findall by owner method
-    .findAll({
-        where:{owner: userid}
-    })
-    .then(
-        //sucess
+//test for group.id: 7
+router.get('/', function(req, res) {
+    
+    group
+    .findAll().then(
+       
         function findAllSucess(data) {
             //console.log(data)
             res.json(data);
         },
-        //error
+        
         function findAllError(err) {
-            res.send(500, err.message)
+            res.send(502, err.message)
         }
     );
-});
+})
 module.exports = router;
+

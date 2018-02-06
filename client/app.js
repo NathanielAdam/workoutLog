@@ -38,6 +38,10 @@ $(function(){
           if (target === "#log") {
              WorkoutLog.log.setDefinitions();
           }
+
+          if (target === "#groups") {
+            WorkoutLog.group.setgroup();
+         }
     
           if (target === "#history") {
              WorkoutLog.log.setHistory();
@@ -66,7 +70,7 @@ $(function(){
                WorkoutLog.log.setHistory();
            }
            if (target === "#groups") {
-               WorkoutLog.groups.group.getGroup()
+               WorkoutLog.group.group
            }
        });
        $('#group-form').on("submit", function(e){

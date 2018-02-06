@@ -48,7 +48,7 @@
         </div>
       </div>
     <!-- groups -->
-      <div class="tab-pane active" id="groups">
+      <div class="tab-pane fade" id="groups">
         <h2>Groups</h2>
         <div id="group">
           <form id="group-form" action="">
@@ -56,7 +56,7 @@
             <input type="text" placeholder="running" id="group-workout">
             <button class="btn btn-primary" type="submit" id="group-submit">Submit</button>
           </form>
-          <table class="list-group">
+          <table class="table">
             <thead>
               <th>Name</th>
               <th>Workout</th>
@@ -135,7 +135,7 @@
       <div class="modal-body">
       <div class="alert alert-danger" role="alert" style="display:none;" id="su_error"></div>
         <label for="su_username">Username:</label>
-        <input id="su_username" />
+        <input required type="email" id="su_username" />
         <label for="su_password">Password:</label>
         <input type="password" id="su_password" />
       </div>
